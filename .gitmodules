@@ -1,0 +1,12 @@
+[submodule "mastra"]
+	path = mastra
+	url = https://github.com/mastra-ai/mastra.git
+[submodule "langchainjs"]
+	path = langchainjs
+	url = https://github.com/langchain-ai/langchainjs.git
+[submodule "ai"]
+	path = ai
+	url = https://github.com/vercel/ai.git
+[submodule "better-agent"]
+	path = better-agent
+	url = https://github.com/better-agent/better-agent.git
