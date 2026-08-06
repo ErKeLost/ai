@@ -10,3 +10,21 @@
 [submodule "better-agent"]
 	path = better-agent
 	url = https://github.com/better-agent/better-agent.git
+[submodule "codex"]
+	path = codex
+	url = https://github.com/openai/codex.git
+[submodule "opencode"]
+	path = opencode
+	url = https://github.com/anomalyco/opencode.git
+[submodule "pi"]
+	path = pi
+	url = https://github.com/earendil-works/pi.git
+[submodule "kimi-code"]
+	path = kimi-code
+	url = https://github.com/MoonshotAI/kimi-code.git
+[submodule "grok-build"]
+	path = grok-build
+	url = https://github.com/xai-org/grok-build.git
+[submodule "qwen-code"]
+	path = qwen-code
+	url = https://github.com/QwenLM/qwen-code.git
