@@ -28,3 +28,6 @@
 [submodule "qwen-code"]
 	path = qwen-code
 	url = https://github.com/QwenLM/qwen-code.git
+[submodule "prime-agent"]
+	path = prime-agent
+	url = https://github.com/PrimeIntellect-ai/prime-agent.git
