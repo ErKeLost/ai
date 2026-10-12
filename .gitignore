@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# 本地 Next.js 实验项目（未纳入版本管理）
+# 若要改为跟踪它：删掉下一行后执行 git add app
+/app/
