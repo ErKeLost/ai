@@ -31,3 +31,18 @@
 [submodule "prime-agent"]
 	path = prime-agent
 	url = https://github.com/PrimeIntellect-ai/prime-agent.git
+[submodule "openui"]
+	path = openui
+	url = https://github.com/thesysdev/openui.git
+[submodule "a2ui"]
+	path = a2ui
+	url = https://github.com/google/A2UI.git
+[submodule "openai-apps-sdk-examples"]
+	path = openai-apps-sdk-examples
+	url = https://github.com/openai/openai-apps-sdk-examples.git
+[submodule "copilotkit"]
+	path = copilotkit
+	url = https://github.com/CopilotKit/CopilotKit.git
+[submodule "ag-ui"]
+	path = ag-ui
+	url = https://github.com/ag-ui-protocol/ag-ui.git

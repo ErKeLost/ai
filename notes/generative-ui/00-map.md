@@ -109,13 +109,35 @@ L1 最容易混淆，其实有 4 种不同数据来源：
 - [ ] **Step 3** 加 L3 demo：sandbox iframe 生成 HTML，配一两个白名单桥接函数
 - [ ] **Step 4** 把三个 demo 的**选择标准**写成决策表（什么时候该用哪一级）
 
+## 本仓库已就位的 Generative UI 素材
+
+### 代码 submodule
+
+| 目录 | 上游 | 是什么 | 对应级别 |
+|---|---|---|---|
+| `copilotkit/` | CopilotKit/CopilotKit | L1/L2/L3 全覆盖的前端栈，AG-UI 发起方，A2UI 设计伙伴。六种原语都在 `showcase/shell-docs/src/content/docs/generative-ui/` 下 | L1+L2+L3 |
+| `openui/` | thesysdev/openui | "The Open Standard for Generative UI"，流式 OpenUI Lang → 前端原生组件渲染 | L2 |
+| `ag-ui/` | ag-ui-protocol/ag-ui | agent ↔ 前端事件流协议实现（Python / TS / Go …） | ②传输 |
+| `a2ui/` | google/A2UI | A2UI 规范 + 多语言 renderer（Flutter / Angular / Lit …） | L2 |
+| `openai-apps-sdk-examples/` | openai/openai-apps-sdk-examples | OpenAI Apps SDK（MCP Apps）官方例子 | L3 |
+| `app/`（未跟踪，本机） | — | 自己的 L1 实战项目（Mastra + AI SDK + ai-elements） | L1 |
+
+> `copilotkit/` 和 `ag-ui/` 是 **shallow clone**（`--depth 1`），因为这两个仓库全量太大（CopilotKit 下到 847MB 就断）。
+> 想补全历史：`git -C copilotkit fetch --unshallow`。
+> 另外本机没装 `git-lfs`，两个仓库里的图片/视频（LFS 跟踪）是 pointer 文件；需要真图：`brew install git-lfs && git -C copilotkit lfs pull`。
+
+### 文章（已下载为 Markdown）
+
+- `openai/` —— 9 篇 OpenAI / MCP 官方文章，索引见 `openai/README.md`。
+  最该先读 `openai/add-ui-to-your-mcp-server.md` 和 `openai/15-lessons-building-chatgpt-apps.md`。
+
 ## 参考资料
 
 - AI SDK 生成式 UI：`ai/content/docs/04-ai-sdk-ui/04-generative-user-interfaces.mdx`（本地）
 - AI SDK RSC 状态管理：`ai/content/docs/05-ai-sdk-rsc/03-generative-ui-state.mdx`（本地，已实验性）
-- CopilotKit 六种原语总览：https://docs.copilotkit.ai/concepts/generative-ui-overview
-- A2UI 规范：https://a2ui.org ・ https://github.com/google/A2UI
-- AG-UI 协议：https://docs.ag-ui.com
-- MCP Apps 标准：https://modelcontextprotocol.io/docs/extensions/apps
-- OpenAI 侧文档：https://developers.openai.com/plugins/build/chatgpt-ui.md ・ 博客 https://developers.openai.com/blog/15-lessons-building-chatgpt-apps.md
+- CopilotKit 六种原语总览：https://docs.copilotkit.ai/concepts/generative-ui-overview ・ 本地 `copilotkit/showcase/shell-docs/src/content/docs/generative-ui/`
+- A2UI 规范：https://a2ui.org ・ 本地 `a2ui/`
+- AG-UI 协议：https://docs.ag-ui.com ・ 本地 `ag-ui/`
+- MCP Apps 标准：https://modelcontextprotocol.io/docs/extensions/apps ・ 本地 `notes/generative-ui/openai/mcp-apps-spec.md`
+- OpenAI 侧文档：https://developers.openai.com/plugins/build/chatgpt-ui.md（本地 `notes/generative-ui/openai/`）
 - DeepLearning.AI 免费短课（CopilotKit CEO 主讲）：Build Interactive Agents with Generative UI
