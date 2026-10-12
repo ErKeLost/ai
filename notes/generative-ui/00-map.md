@@ -128,8 +128,9 @@ L1 最容易混淆，其实有 4 种不同数据来源：
 
 ### 文章（已下载为 Markdown）
 
-- `openai/` —— 9 篇 OpenAI / MCP 官方文章，索引见 `openai/README.md`。
-  最该先读 `openai/add-ui-to-your-mcp-server.md` 和 `openai/15-lessons-building-chatgpt-apps.md`。
+- `openai/` —— 9 篇 OpenAI / MCP 官方文章，**已有中文译文**，索引见 `openai/README.md`。
+  - 中文：`openai/zh/`（建议读这套）・英文原文：`openai/en/`
+  - 最该先读 `openai/zh/01-给MCP服务器加上UI.md` 和 `openai/zh/08-打造ChatGPT应用的15条经验.md`
 
 ## 参考资料
 
