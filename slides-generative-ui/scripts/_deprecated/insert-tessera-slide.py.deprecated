@@ -1,0 +1,53 @@
+# ⚠️ 已废弃（2026-10-14）—— 一次性脚本，已经跑过，不要重复运行！
+#
+# 它会往 slides.md 里插一页「案例 ③」，且标题是旧口径（open-tessera），
+# 重复运行会插入重复页。
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""插入「案例 ③：open-tessera 对比」页。"""
+src = open('slides.md').read()
+
+anchor = "---\nlayout: section\n---\n# ✨ 02 · 机制：它是怎么跑起来的"
+assert anchor in src, "锚点未找到"
+
+new_slide = '''---
+layout: default
+---
+
+# 案例 ③：我们自己的项目（open-tessera）
+
+<div class="gu-small" style="margin-bottom:0.5rem">同一件事，两种做法的对比</div>
+
+<div class="gu-grid g2">
+  <div>
+    <div class="gu-shot"><img src="/images/tessera-openui.png" alt="open-tessera 使用 OpenUI" /></div>
+    <div class="gu-shot-cap"><span class="gu-pill">做法 A</span> <strong>OpenUI</strong> — 模型流式写界面描述，前端解析成组件。<br/>左边是表结构浏览，右边 AI 面板生成了「用户注册分布」，还自带<strong>要点</strong>和<strong>范围与假设</strong>。</div>
+  </div>
+  <div>
+    <div class="gu-shot gu-shot-empty">待补：另一种做法的截图</div>
+    <div class="gu-shot-cap"><span class="gu-pill">做法 B</span> 同一条需求，在另一种架构下的产出（等图补齐后一起讲）</div>
+  </div>
+</div>
+
+<div class="gu-quote" style="margin-top:0.85rem">
+同一份数据、同一个问题，两种架构给用户的东西不一样 —— 差别不在界面好不好看，而在<strong>谁决定界面、谁拥有数据、点击之后去哪</strong>。
+</div>
+
+<!--
+这张是我自己项目里的截图，右边那半等第二张图补上后一起讲。讲解提纲：
+
+· 先交代场景：左边是我项目里的表结构浏览，右边是 AI 面板。用户就在这儿问了一句关于用户注册的问题。
+· 指一下产出：它给的不是一段文字，而是一张按月份分组的表，合计 1334 个用户。注意它底下还自己写了「要点」和「范围与假设」——这两段才是我最想要的，因为它把口径说清楚了：按 Created At 分组、覆盖 12 个月、没有额外过滤。做数据产品的人都知道，口径不清的结论等于没有结论。
+· 说一句自己的感受：这个"范围与假设"不是我写在提示词里逼它输出的，是它自己判断该给的——这种"主动交代口径"的行为，在纯文本回答里很少见。
+· 然后停顿，转到对比："这是做法 A，用 OpenUI 做的。做法 B 是同一条需求，换一种架构，我们来看差别在哪。"
+· 对比时不要比"好不好看"，比这四件事：① 界面是谁决定的；② 数据是怎么拿到的（是模型带过来的，还是界面自己去取的）；③ 用户点了以后发生了什么；④ 出错了怎么办。
+· 最后落回主线：这两种做法的取舍，正好对应第 11 页那张图里"生成"和"执行"的分界。
+
+【时长】≈2 分钟
+-->
+
+'''
+
+src = src.replace(anchor, new_slide + anchor, 1)
+open('slides.md', 'w').write(src)
+print("已插入「案例 ③」页")

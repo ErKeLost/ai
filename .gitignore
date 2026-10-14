@@ -1,6 +1,26 @@
 # macOS
 .DS_Store
 
+# 依赖
+node_modules/
+
 # 本地 Next.js 实验项目（未纳入版本管理）
 # 若要改为跟踪它：删掉下一行后执行 git add app
 /app/
+
+# Slidev 幻灯片项目（slides-generative-ui）
+# 只跟踪源文件：slides.md / style.css / images / videos / scripts
+# 下面这些是 slidev 生成或导出的产物，不入库
+/slides-generative-ui/dist/
+/slides-generative-ui/.slidev/
+/slides-generative-ui/slides-export/
+/slides-generative-ui/*.pdf
+/slides-generative-ui/*.pptx
+/slides-generative-ui/*.png
+
+# 构建/打包通用产物
+*.tsbuildinfo
+dist/
+.next/
+.turbo/
+coverage/

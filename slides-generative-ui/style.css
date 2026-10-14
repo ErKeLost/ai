@@ -1,0 +1,410 @@
+/**
+ * 卡哇伊皮肤 · 薄荷 × 奶油 版
+ * 粉彩渐变 + 圆角 + 圆体标题 + 贴纸感卡片
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=ZCOOL+KuaiLe&display=swap");
+
+:root {
+  /* 墨色与灰 */
+  --k-ink: #33534d;
+  --k-ink-strong: #24403b;
+  --k-muted: #87a29c;
+
+  /* 薄荷（主色） */
+  --k-mint: #1fb890;
+  --k-mint-deep: #0f9a76;
+  --k-mint-soft: #d8f6ec;
+  --k-mint-line: #a6e7d3;
+
+  /* 奶油黄 */
+  --k-cream: #e9a825;
+  --k-cream-soft: #fff5da;
+  --k-cream-line: #ffe4a6;
+
+  /* 天空蓝（次色） */
+  --k-sky: #3f9fe0;
+  --k-sky-soft: #e0f1fd;
+  --k-sky-line: #b6dcf7;
+
+  /* 警示 */
+  --k-red: #e8695f;
+  --k-red-soft: #ffeded;
+
+  --k-card: #ffffff;
+  --k-shadow: 0 10px 24px rgba(96, 150, 133, 0.16);
+  --k-shadow-sm: 0 4px 12px rgba(96, 150, 133, 0.13);
+
+  /* 兼容旧工具类变量 */
+  --gu-fg: var(--k-ink);
+  --gu-muted: var(--k-muted);
+  --gu-line: var(--k-mint-line);
+  --gu-card: var(--k-card);
+  --gu-accent: var(--k-mint);
+  --gu-accent-2: var(--k-sky);
+  --gu-warn: var(--k-cream);
+  --gu-ok: var(--k-mint);
+  --gu-bad: var(--k-red);
+}
+
+/* ————— 底：薄荷奶油渐变 + 波点 ————— */
+.slidev-layout {
+  color: var(--k-ink);
+  font-family: "Baloo 2", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 1.02rem;
+  background-color: #fdfffc;
+  background-image:
+    radial-gradient(rgba(31, 184, 144, 0.14) 1.5px, transparent 1.6px),
+    radial-gradient(circle at 8% 12%, rgba(216, 246, 236, 0.85), transparent 42%),
+    radial-gradient(circle at 90% 8%, rgba(255, 245, 218, 0.9), transparent 44%),
+    radial-gradient(circle at 76% 96%, rgba(224, 241, 253, 0.85), transparent 46%),
+    linear-gradient(140deg, #f7fffc 0%, #fdfef7 52%, #f4fbff 100%);
+  background-size: 22px 22px, auto, auto, auto, auto;
+}
+
+/* ————— 标题：薄荷贴纸 ————— */
+.slidev-layout h1 {
+  font-family: "ZCOOL KuaiLe", "Baloo 2", "PingFang SC", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.28;
+  display: inline-block;
+  color: #fff;
+  background: linear-gradient(100deg, #6fdcbf, #1fb890 72%);
+  padding: 0.22rem 0.9rem 0.3rem;
+  border-radius: 18px;
+  box-shadow: 0 5px 0 var(--k-mint-soft), var(--k-shadow);
+  transform: rotate(-1.1deg);
+  margin-bottom: 0.75rem;
+}
+
+.slidev-layout h2 {
+  font-family: "ZCOOL KuaiLe", "Baloo 2", sans-serif;
+  font-weight: 400;
+  color: var(--k-ink-strong);
+  font-size: 1.35rem;
+  display: inline-block;
+  border-bottom: 4px dotted var(--k-cream-line);
+  padding-bottom: 0.08rem;
+  margin-bottom: 0.5rem;
+}
+
+.slidev-layout h3 {
+  font-family: "ZCOOL KuaiLe", "Baloo 2", sans-serif;
+  font-weight: 400;
+  color: #4d6c65;
+  font-size: 1.08rem;
+  margin-bottom: 0.4rem;
+}
+
+.slidev-layout a { color: var(--k-sky); }
+.slidev-layout strong { color: var(--k-ink-strong); }
+.slidev-layout ul > li::marker { color: var(--k-mint); content: "❀  "; }
+.slidev-layout ol > li::marker { color: var(--k-mint); font-weight: 700; }
+
+.slidev-layout code {
+  background: var(--k-mint-soft);
+  color: #16755c;
+  border-radius: 7px;
+  padding: 0.08em 0.36em;
+  font-size: 0.86em;
+}
+
+/* 代码块 */
+.slidev-layout pre,
+.shiki {
+  border-radius: 18px !important;
+  border: 2px solid var(--k-mint-soft) !important;
+  box-shadow: var(--k-shadow-sm);
+}
+.slidev-layout pre { background: #f7fffc !important; }
+.slidev-layout pre code { font-size: 0.78rem; line-height: 1.6; background: transparent; color: #35564f; }
+
+/* 表格 */
+.slidev-layout table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.85rem;
+  border: 2px solid var(--k-mint-soft);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--k-shadow-sm);
+}
+.slidev-layout thead th {
+  background: linear-gradient(180deg, #f0fdf8, #e2f9f0);
+  color: #146a54;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 2px solid var(--k-mint-soft);
+}
+.slidev-layout tbody td {
+  padding: 0.45rem 0.7rem;
+  border-bottom: 1px solid #f0f8f5;
+  vertical-align: top;
+  background: #fff;
+}
+.slidev-layout tbody tr:nth-child(even) td { background: #fbfefd; }
+.slidev-layout tbody tr:last-child td { border-bottom: none; }
+.slidev-layout tbody td:first-child,
+.slidev-layout thead th:first-child { white-space: nowrap; font-weight: 700; }
+
+/* 引用块 */
+.slidev-layout blockquote {
+  border: 2px dashed var(--k-cream-line);
+  border-left: 5px solid var(--k-mint);
+  border-radius: 16px;
+  background: #fffdf5;
+  padding: 0.55rem 0.9rem;
+  color: #47655e;
+}
+
+/* ————— 内容工具类 ————— */
+.gu-grid { display: grid; gap: 0.7rem; }
+.gu-grid.g2 { grid-template-columns: 1fr 1fr; }
+.gu-grid.g3 { grid-template-columns: repeat(3, 1fr); }
+.gu-grid.g4 { grid-template-columns: repeat(4, 1fr); }
+.gu-grid.g5 { grid-template-columns: repeat(5, 1fr); }
+
+.gu-card {
+  background: var(--k-card);
+  border: 2px solid var(--k-mint-soft);
+  border-radius: 22px;
+  padding: 0.8rem 0.95rem;
+  box-shadow: var(--k-shadow);
+}
+.gu-card h4 {
+  margin: 0 0 0.3rem;
+  font-family: "ZCOOL KuaiLe", "Baloo 2", sans-serif;
+  font-weight: 400;
+  font-size: 1.02rem;
+  color: #3f5f58;
+}
+.gu-card p, .gu-card ul { margin: 0; font-size: 0.82rem; line-height: 1.65; color: #5d7b74; }
+.gu-card ul { padding-left: 1rem; }
+.gu-card.is-accent { border-color: var(--k-mint-line); background: #f6fffb; }
+.gu-card.is-violet { border-color: var(--k-sky-line); background: #f8fcff; }
+.gu-card.is-warn { border-color: var(--k-cream-line); background: #fffdf4; }
+.gu-card.is-bad { border-color: #f7c7c2; background: #fff9f8; }
+
+.gu-kpi {
+  text-align: center;
+  background: var(--k-card);
+  border: 2px solid var(--k-mint-soft);
+  border-radius: 22px;
+  padding: 0.75rem 0.5rem;
+  box-shadow: var(--k-shadow);
+}
+.gu-kpi b {
+  display: block;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 1.85rem;
+  line-height: 1.15;
+  color: var(--k-mint);
+}
+.gu-kpi span { font-size: 0.76rem; color: var(--k-muted); }
+
+.gu-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.14rem 0.55rem;
+  border-radius: 999px;
+  border: 2px solid var(--k-mint-line);
+  background: #fff;
+  color: #14795f;
+  margin-right: 0.3rem;
+}
+.gu-pill.ok { color: var(--k-mint); border-color: var(--k-mint-line); }
+.gu-pill.bad { color: var(--k-red); border-color: #f7c7c2; }
+.gu-pill.warn { color: var(--k-cream); border-color: var(--k-cream-line); }
+
+.gu-muted { color: var(--k-muted); }
+.gu-accent { color: var(--k-mint); }
+.gu-mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; color: #3f6e63; }
+.gu-small { font-size: 0.78rem; color: var(--k-muted); }
+
+.gu-quote {
+  background: #fffdf5;
+  border: 2px dashed var(--k-cream-line);
+  border-left: 5px solid var(--k-mint);
+  border-radius: 16px;
+  padding: 0.55rem 0.9rem;
+  color: #47655e;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.gu-wire {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  line-height: 1.55;
+  background: #f7fffc;
+  border: 2px solid var(--k-mint-soft);
+  border-radius: 16px;
+  padding: 0.6rem 0.8rem;
+  color: #40695f;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 15rem;
+  overflow: auto;
+}
+.gu-wire .g-add { color: var(--k-mint); font-weight: 700; }
+.gu-wire .g-del { color: var(--k-red); }
+.gu-wire .g-dim { color: #9db8b1; }
+
+.gu-badge-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 999px;
+  background: linear-gradient(140deg, #6fdcbf, #1fb890);
+  color: #fff;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-right: 0.4rem;
+}
+
+.gu-em {
+  background: linear-gradient(180deg, transparent 58%, var(--k-cream-soft) 58%);
+  font-weight: 700;
+  color: var(--k-ink-strong);
+}
+
+/* 自绘流程图 */
+.gu-flow { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.4rem; }
+.gu-node {
+  flex: 1;
+  text-align: center;
+  padding: 0.65rem 0.5rem;
+  border-radius: 20px;
+  border: 2px solid var(--k-mint-soft);
+  background: #fff;
+  box-shadow: var(--k-shadow-sm);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #44655d;
+}
+.gu-node b { display: block; font-size: 0.72rem; color: var(--k-muted); font-weight: 600; margin-bottom: 0.12rem; }
+.gu-node.is-accent { border-color: var(--k-mint-line); background: #f6fffb; color: #14795f; }
+.gu-node.is-violet { border-color: var(--k-sky-line); background: #f8fcff; color: #2a6f9e; }
+.gu-arrow { color: var(--k-mint); font-size: 1.3rem; line-height: 1; }
+
+/* 手机录屏框 */
+.gu-phone { display: flex; justify-content: center; align-items: center; }
+.gu-phone-frame {
+  position: relative;
+  height: 28rem;
+  max-height: 72vh;
+  aspect-ratio: 430 / 932;
+  border-radius: 26px;
+  border: 3px solid #fff;
+  box-shadow: 0 14px 34px rgba(96, 150, 133, 0.26);
+  overflow: hidden;
+  background: #fff;
+}
+.gu-phone-frame img,
+.gu-phone-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.gu-phone-frame video { z-index: 1; }
+
+/* 署名 */
+.gu-credit {
+  font-size: 0.84rem;
+  color: #52736b;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid var(--k-mint-soft);
+  border-radius: 999px;
+  display: inline-block;
+  padding: 0.16rem 0.7rem;
+  box-shadow: var(--k-shadow-sm);
+}
+
+/* ————— 封面 ————— */
+.slidev-layout.cover {
+  background-color: #fdfffc;
+  background-image:
+    linear-gradient(100deg, rgba(253, 255, 252, 0.95) 0%, rgba(253, 255, 252, 0.88) 40%, rgba(253, 255, 252, 0.42) 72%, rgba(253, 255, 252, 0.2) 100%),
+    url("/images/cover-mint.jpg");
+  background-size: cover, cover;
+  background-position: center, center;
+}
+.slidev-layout.cover h1 { font-size: 2.9rem; transform: rotate(-1.4deg); }
+
+/* ————— 章节页 ————— */
+.slidev-layout.section {
+  background-color: #fdfffc;
+  background-image:
+    radial-gradient(rgba(31, 184, 144, 0.15) 1.6px, transparent 1.7px),
+    radial-gradient(circle at 14% 20%, rgba(216, 246, 236, 0.95), transparent 46%),
+    radial-gradient(circle at 86% 84%, rgba(255, 245, 218, 0.95), transparent 48%),
+    linear-gradient(150deg, #f2fffb, #fdfff6 60%, #f2fbff);
+  background-size: 24px 24px, auto, auto, auto;
+}
+.slidev-layout.section h1 { font-size: 2.3rem; }
+
+.slidev-page-number { color: var(--k-muted); }
+
+/* 视频/动图小卡（官方演示） */
+.gu-clip {
+  position: relative;
+  border-radius: 16px;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 20px rgba(96, 150, 133, 0.22);
+  overflow: hidden;
+  background: #0d1220;
+  height: 8.6rem;
+}
+.gu-clip img,
+.gu-clip video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.gu-clip video { z-index: 1; }
+.gu-clip-cap {
+  font-size: 0.76rem;
+  color: #5d7b74;
+  margin-top: 0.28rem;
+  line-height: 1.4;
+}
+
+/* 产品截图对比框 */
+.gu-shot {
+  border: 2px solid #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(96, 150, 133, 0.22);
+  overflow: hidden;
+  background: #0e1119;
+}
+.gu-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.gu-shot-empty {
+  border-style: dashed;
+  border-color: var(--k-mint-line);
+  background: #f8fffc;
+  color: var(--k-muted);
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 1rem;
+}
+.gu-shot-cap { font-size: 0.78rem; color: #4b6b64; margin-top: 0.3rem; line-height: 1.45; }
+
+/* 对比页：面板截图（宽高比约 1.05:1） */
+

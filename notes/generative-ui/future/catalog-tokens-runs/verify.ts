@@ -1,0 +1,17 @@
+import { createOfficialCatalog } from "@open-generative/components";
+import { compileOpenGenerativeLanguage, createAuthoringPropsSchema, estimateOpenGenerativeLanguagePromptTokens, OPEN_GENERATIVE_LANGUAGE_PROMPT_MAX_BYTES, OPEN_GENERATIVE_LANGUAGE_PROMPT_MAX_TOKEN_PROXY } from "@open-generative/compiler";
+import type { CompilerCatalogLike } from "@open-generative/compiler";
+const official = await createOfficialCatalog();
+const contracts = [official.components.dataChart, ...Object.values(official.components.ui).slice(0, 17)];
+const resources = [{ sliceResourceId: "resource-000001", source: { bindingId: "resource-analysis" }, descriptor: { label: "Daily values", columns: [ { columnId: "date", label: "Date", valueSchema: { type: "string", format: "date" } }, { columnId: "value", label: "Value", valueSchema: { type: "number" } } ] } }];
+const entries = contracts.map((c, i) => ({ sliceComponentId: `component-${String(i+1).padStart(6,"0")}`, contract: c.ref }));
+const byId = new Map(entries.map((e,i)=>[e.sliceComponentId, contracts[i]!]));
+const props = new Map(contracts.map(c=>[c.ref.componentType, createAuthoringPropsSchema(c)]));
+const catalog = { slice: { sliceHash:`sha256:${"f".repeat(64)}`, contractSetHash:`sha256:${"e".repeat(64)}`, components: entries, resources, limits:{maxOperations:64,maxTextBytes:64_000} }, componentBySliceId:(id:string)=>byId.get(id), authoringPropsSchema:(r:any)=>props.get(r.componentType)! } as unknown as CompilerCatalogLike;
+const language = compileOpenGenerativeLanguage({ catalog, presentationPolicy: "required" });
+const bytes = new TextEncoder().encode(language.systemPrompt).byteLength;
+console.log("contracts:", contracts.length);
+console.log("bytes:", bytes, "<= 96KiB?", bytes <= OPEN_GENERATIVE_LANGUAGE_PROMPT_MAX_BYTES);
+console.log("tokenProxy:", estimateOpenGenerativeLanguagePromptTokens(language.systemPrompt), "<= ", OPEN_GENERATIVE_LANGUAGE_PROMPT_MAX_TOKEN_PROXY);
+console.log("recipes:", JSON.stringify([...language.systemPrompt.matchAll(/"recipe":"([^"]+)"/gu)].map(m=>m[1])));
+console.log("expect  : [\"revenue-smooth-area\",\"contributions-heatmap\"]");

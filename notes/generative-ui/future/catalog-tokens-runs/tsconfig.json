@@ -1,0 +1,85 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@open-generative/protocol": [
+        "/Users/work/open-generative/packages/protocol/src/index.ts"
+      ],
+      "@open-generative/catalog": [
+        "/Users/work/open-generative/packages/catalog/src/index.ts"
+      ],
+      "@open-generative/compiler": [
+        "/Users/work/open-generative/packages/compiler/src/index.ts"
+      ],
+      "@open-generative/runtime": [
+        "/Users/work/open-generative/packages/runtime/src/index.ts"
+      ],
+      "@open-generative/server": [
+        "/Users/work/open-generative/packages/server/src/index.ts"
+      ],
+      "@open-generative/host": [
+        "/Users/work/open-generative/packages/host/src/index.ts"
+      ],
+      "@open-generative/client": [
+        "/Users/work/open-generative/packages/client/src/index.ts"
+      ],
+      "@open-generative/resources": [
+        "/Users/work/open-generative/packages/resources/src/index.ts"
+      ],
+      "@open-generative/supabase": [
+        "/Users/work/open-generative/packages/supabase/src/index.ts"
+      ],
+      "@open-generative/capabilities": [
+        "/Users/work/open-generative/packages/capabilities/src/index.ts"
+      ],
+      "@open-generative/react": [
+        "/Users/work/open-generative/packages/react/src/index.ts"
+      ],
+      "@open-generative/components": [
+        "/Users/work/open-generative/packages/components/src/index.ts"
+      ],
+      "@open-generative/ui": [
+        "/Users/work/open-generative/packages/ui/src/index.ts"
+      ],
+      "@open-generative/adapter-shadcn": [
+        "/Users/work/open-generative/packages/adapter-shadcn/src/index.ts"
+      ],
+      "@open-generative/design-system": [
+        "/Users/work/open-generative/packages/design-system/src/index.ts"
+      ],
+      "@open-generative/ai-sdk": [
+        "/Users/work/open-generative/packages/ai-sdk/src/index.ts"
+      ],
+      "@open-generative/ai-sdk/*": [
+        "/Users/work/open-generative/packages/ai-sdk/src/*.ts"
+      ],
+      "@open-generative/mastra": [
+        "/Users/work/open-generative/packages/mastra/src/index.ts"
+      ],
+      "@open-generative/ag-ui": [
+        "/Users/work/open-generative/packages/ag-ui/src/index.ts"
+      ],
+      "@open-generative/ag-ui/*": [
+        "/Users/work/open-generative/packages/ag-ui/src/*.ts"
+      ]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2022",
+    "verbatimModuleSyntax": true,
+    "ignoreDeprecations": "6.0"
+  }
+}
